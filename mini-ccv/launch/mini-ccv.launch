@@ -2,20 +2,21 @@
 <launch>
     <node pkg="mini-ccv" type="mini-ccv_node" name="mini_ccv" output="screen" />
 
-    </include>
 
     <include file='$(find ccv_dynamixel_controler)'>
         <arg name="use_joint_state" default="false"/>
         <arg name="use_cmd_vel" default="true"/>
-        <arg name="seperation_between_wheels" ="0.230">
+        <arg name="seperation_between_wheels"="0.230">
     </include>
 
-    <node name="joy" pkg="joy" type="joy_node">
-        <param name="dev" value="/dev/input/js0"/>
-    </node>
-    <node name="ccv_sim" pkg="ccv_sim" type="ccv_sim_node" output="screen">
-        <remap from="/cmd_vel" to="/dynamixel_workbench/cmd_vel"/>
+    <include file='$(find ccv_sim_sub)'>
+        <node name="joy" pkg="joy" type="joy_node">
+            <param name="dev" value="/dev/input/js0"/>
+        </node>
+        <node name="ccv_sim" pkg="ccv_sim" type="ccv_sim_node" output="screen">
+            <remap from="/cmd_vel" to="/dynamixel_workbench/cmd_vel"/>
         <!-- <remap from="/roll_pitch" to ="/sq2_ccv/roll_pitch_controller/roll_pitch"/>  -->
-    </node>
+        </node>
+    </include>
 
 </launch>
