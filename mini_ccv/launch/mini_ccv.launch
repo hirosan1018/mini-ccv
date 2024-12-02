@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-    <node pkg="mini-ccv" type="mini-ccv_node" name="mini_ccv" output="screen" />
+    <node pkg="mini_ccv" type="mini_ccv_node" name="mini_ccv" output="screen" />
 
 
-    <include file='$(find ccv_dynamixel_controler)'>
-        <arg name="use_joint_state" default="false"/>
-        <arg name="use_cmd_vel" default="true"/>
-        <arg name="seperation_between_wheels"="0.230">
-    </include>
+    <include file="$(find ccv_dynamixel_controller)/launch/ccv_dynamixel_controller.launch"/>
+    <include file="$(find ccv_dynamixel_controller)/launch/test_by_two_motors.launch"/>
 
-    <include file='$(find ccv_sim_sub)'>
+
+    <include file="$(find ccv_sim)/launch/ccv_sim_sub.launch">
         <node name="joy" pkg="joy" type="joy_node">
             <param name="dev" value="/dev/input/js0"/>
         </node>
