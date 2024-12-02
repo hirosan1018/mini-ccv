@@ -1,4 +1,4 @@
-# mini-ccv
+# mini_ccv
 
 # Dependencies
 - [ccv_dynamixel_controller](https://github.com/amslabtech/ccv_dynamixel_controller)
