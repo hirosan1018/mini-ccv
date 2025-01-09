@@ -1,18 +1,25 @@
 <?xml version="1.0"?>
 <launch>
 
-
-    <!-- <include file="$(find ccv_dynamixel_controller)/launch/ccv_dynamixel_controller.launch"/> -->
+    <include file="$(find ccv_dynamixel_controller)/launch/ccv_dynamixel_controller.launch"/>
     <!-- <include file="$(find ccv_dynamixel_controller)/launch/test_by_two_motors.launch"/> -->
-
-    <include file="$(find dynamixel_workbench_controllers)/launch/dynamixel_controllers.launch"/>
     
-    <node name="joy" pkg="joy" type="joy_node">
-        <param name="dev" value="/dev/input/js0"/>
-    </node>
-    <node name="ccv_sim" pkg="ccv_sim" type="ccv_sim_node" output="screen">
-        <remap from="/cmd_vel" to="/dynamixel_workbench/cmd_vel"/>
+
+   <!-- teleop -->
+    <include file="$(find sq2_ccv2)/launch/ccv2_teleoplate.launch"/>
+
+    <!-- vehicle  -->
+    <!-- <include file="$(find sq2_ccv2)/launch/sq2_ccv2_vehicle.launch"/> -->
+
+    <!-- dynamixel_controllers -->
+    <include file="$(find dynamixel_workbench_controllers)/launch/dynamixel_controllers.launch">
+        <arg name="use_cmd_vel"         default="true"/>
+    </include>
+    
+    <!-- ccv_sim -->
+    <!-- <node name="ccv_sim" pkg="ccv_sim" type="ccv_sim_node" output="screen"> -->
+        <!-- <remap from="/cmd_vel" to="/dynamixel_workbench/cmd_vel"/> -->
     <!-- <remap from="/roll_pitch" to ="/sq2_ccv/roll_pitch_controller/roll_pitch"/>  -->
-    </node>
+    <!-- </node> -->
 
 </launch>

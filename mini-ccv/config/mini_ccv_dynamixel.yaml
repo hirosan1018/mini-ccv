@@ -1,0 +1,73 @@
+# You can find control table of Dynamixel on emanual (http://emanual.robotis.com/#control-table)
+# Control table item has to be set Camel_Case and not included whitespace
+# You are supposed to set at least Dynamixel ID
+# This example is compatible with Dynamixel using protocol 2.0
+
+Roll:
+  ID: 11
+  Return_Delay_Time: 10
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+  #Limit is 7.00 [deg]
+  # Max Position Limit 19519
+  # Min Position Limit -19519
+
+SteerL:
+  ID: 12
+  Return_Delay_Time: 10
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+  #Limit tis 24.00[deg]
+  # Max Position Limit 40500
+  # Min Position Limit -40500
+
+dynamixel1:
+  ID: 13
+  Return_Delay_Time: 10
+  Operating_Mode: 1
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+  # LED_Red: 255
+  # LED_Green: 215
+  # LED_Blue: 0
+
+Fore:
+  ID: 14
+  Return_Delay_Time: 10
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+  #Limit is 30.00[deg]
+  #Limit is -15.00[deg]
+  # Max Position Limit 83654
+  # Min Position Limit -41827
+
+SteerR:
+  ID: 15
+  Return_Delay_Time: 10
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+  #Limit tis 24.00[deg]
+  # Max Position Limit 40500
+  # Min Position Limit -40500
+
+dynamixel2:
+  ID: 16
+  Return_Delay_Time: 10
+  Operating_Mode: 1
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+
+Rear:
+  ID: 17
+  Return_Delay_Time: 10
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+  #Limit is 30.00[deg]
+  #Limit is -15.00[deg]
+  # Max Position Limit 83654
+  # Min Position Limit -41827
